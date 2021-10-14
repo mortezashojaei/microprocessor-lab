@@ -1,0 +1,28 @@
+#include <mega16.h>
+static unsigned int time_count; 
+interrupt [TIM0_OVF] void timer0_ovf_isr(void) 
+{
+    TCNT0 = 31; 
+    ++time_count; 
+    if (time_count == 3333)
+  {
+        PORTC.0 = (PORTC.0 ^ 1); 
+        time_count = 0; 
+     }
+}
+void main (void) {
+    DDRC = 0x01; 
+    TCCR0=0x02;
+    TCNT0=31;
+   
+
+    TIMSK=0x01;
+
+    #asm(�sei")
+
+    while(1) 
+    {
+        ; /*do nothing in here */
+    }
+}
+
