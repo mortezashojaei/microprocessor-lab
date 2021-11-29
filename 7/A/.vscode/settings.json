@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "lcd.h": "c",
+        "pgmspace.h": "c",
+        "delay.h": "c",
+        "keypad.h": "c",
+        "stdint.h": "c",
+        "stdlib.h": "c"
+    }
+}
